@@ -254,6 +254,9 @@ const openSelect = () => {
 }
 
 const getFullEmail = (email) => {
+  if (email && email.includes('@')) {
+    return email
+  }
   return hideLoginDomain.value ? email : email + suffix.value
 }
 
