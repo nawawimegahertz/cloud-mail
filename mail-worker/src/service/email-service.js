@@ -378,7 +378,7 @@ const emailService = {
 	async sendByCloudflareEmail(c, params) {
 		const sendForm = {
 			from: { email: params.accountEmail, name: params.name },
-			to: [...params.receiveEmail],
+			to: params.receiveEmail.map(email => typeof email === 'string' ? { email } : email),
 			subject: params.subject
 		};
 
