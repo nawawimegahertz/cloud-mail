@@ -378,10 +378,26 @@ const emailService = {
 	},
 
 	async sendByCloudflareEmail(c, params) {
+		const fromAddress = { email: String(params.accountEmail || '').trim() };
+		if (params.name != null && String(params.name).trim() !== '') {
+			fromAddress.name = String(params.name).trim();
+		}
+
+		const toAddresses = params.receiveEmail.map(item => {
+			if (typeof item === 'string') {
+				return { email: item.trim() };
+			}
+			const addr = { email: String(item.email || item.address || '').trim() };
+			if (item.name != null && String(item.name).trim() !== '') {
+				addr.name = String(item.name).trim();
+			}
+			return addr;
+		});
+
 		const sendForm = {
-			from: { email: params.accountEmail, name: params.name },
-			to: params.receiveEmail.map(email => typeof email === 'string' ? { email } : email),
-			subject: params.subject
+			from: fromAddress,
+			to: toAddresses,
+			subject: String(params.subject || '')
 		};
 
 		if (params.text) {
