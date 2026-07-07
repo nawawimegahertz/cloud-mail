@@ -1,9 +1,9 @@
 <p align="center">
     <img src="doc/demo/logo.png" width="80px" />
     <h1 align="center">Cloud Mail</h1>
-    <p align="center">基于 Cloudflare 的简约响应式邮箱服务，支持邮件发送、附件收发 🎉</p> 
+    <p align="center">Layanan email minimalis dan responsif berbasis Cloudflare Workers, mendukung pengiriman email serta pesan beserta lampiran 🎉</p> 
     <p align="center">
-        简体中文 | <a href="/README-en.md" style="margin-left: 5px">English </a>
+        Bahasa Indonesia | <a href="/README-en.md" style="margin-left: 5px">English</a>
     </p>
     <p align="center">
         <a href="https://github.com/maillab/cloud-mail/tree/main?tab=MIT-1-ov-file" target="_blank" >
@@ -30,14 +30,15 @@
 </p>
 
 
-## 项目简介
+## Deskripsi Proyek
 
-只需要一个域名，就可以创建多个不同的邮箱，类似各大邮箱平台，本项目支持署到 Cloudflare Workers ，降低服务器成本，搭建自己的邮箱服务
+Hanya dengan satu nama domain, Anda dapat membuat berbagai alamat email yang berbeda, layaknya platform penyedia email besar. Proyek ini mendukung deployment ke **Cloudflare Workers**, sehingga dapat menekan biaya server dan memungkinkan Anda membangun layanan email mandiri dengan mudah.
 
-## 项目展示
+## Tampilan Proyek
 
-- [在线演示](https://skymail.ink)<br>
-- [部署文档](https://doc.skymail.ink)<br>
+- [Demo Online](https://skymail.ink)<br>
+- [Panduan Deployment](https://doc.skymail.ink)<br>
+
 
 | ![](/doc/demo/demo1.png) | ![](/doc/demo/demo2.png) |
 |-----------------------|-----------------------|
@@ -46,113 +47,110 @@
 
 
 
-## 功能介绍
+## Fitur Utama
 
-- **💰 低成本使用**： 可部署到 Cloudflare Workers 降低服务器成本
+- **💰 Biaya Rendah**: Dapat dideploy langsung ke Cloudflare Workers sehingga menghemat atau bahkan membebaskan biaya penyewaan server.
 
-- **💻 响应式设计**：响应式布局自动适配PC和大部分手机端浏览器
+- **💻 Desain Responsif**: Tata letak yang responsif secara otomatis beradaptasi dengan layar komputer (PC) maupun sebagian besar browser di ponsel.
 
-- **📧 邮件发送**：集成Resend发送邮件，支持群发，内嵌图片和附件发送，发送状态查看
+- **📧 Pengiriman Email**: Terintegrasi dengan Resend untuk mengirim email, mendukung pengiriman masal (broadcast), menyisipkan gambar dan lampiran, serta memantau status pengiriman.
 
-- **🛡️ 管理员功能**：可以对用户，邮件进行管理，RABC权限控制对功能及使用资源限制
+- **🛡️ Fitur Administrator**: Memungkinkan manajemen pengguna dan email, dilengkapi kontrol akses berbasis peran (RBAC) untuk membatasi fitur serta penggunaan sumber daya.
 
-- **📦 附件收发**：支持收发附件，使用R2对象存储保存和下载文件
+- **📦 Kirim & Terima Lampiran**: Mendukung penerimaan dan pengiriman lampiran email dengan memanfaatkan penyimpanan objek Cloudflare R2 untuk menyimpan dan mengunduh file.
 
-- **🔔 邮件推送**：接收邮件后可以转发到TG机器人或其他服务商邮箱
+- **🔔 Notifikasi & Penerusan Pesan**: Email yang masuk dapat diteruskan (forward) secara otomatis ke bot Telegram atau penyedia layanan email lainnya.
 
-- **📡 开放API**：支持使用API批量生成用户，多条件查询邮件 
+- **📡 API Terbuka**: Menyediakan REST API untuk menghasilkan pengguna secara masal dan melakukan pencarian email dengan berbagai parameter.
 
-- **🔢 验证码识别**：使用Workers AI，自动识别邮件验证码 
+- **🔢 Pengenalan Kode Verifikasi**: Menggunakan Cloudflare Workers AI untuk mengenali dan mengekstrak kode verifikasi (OTP) secara otomatis dari email yang masuk.
 
-- **📈 数据可视化**：使用ECharts对系统数据详情，用户邮件增长可视化显示
+- **📈 Visualisasi Data**: Menggunakan ECharts untuk menampilkan rincian statistik sistem dan grafik pertumbuhan email pengguna secara visual dan interaktif.
 
-- **🎨 个性化设置**：可以自定义网站标题，登录背景，透明度
+- **🎨 Pengaturan Kustomisasi**: Memungkinkan penyesuaian judul situs web, gambar latar belakang halaman login, dan tingkat transparansi antarmuka.
 
-- **🤖 人机验证**：集成Turnstile人机验证，防止人机批量注册
+- **🤖 Verifikasi Keamanan**: Terintegrasi dengan Cloudflare Turnstile untuk mencegah pendaftaran akun masal oleh bot/spam.
 
-- **📜 更多功能**：正在开发中...
+- **📜 Fitur Lainnya**: Fitur-fitur menarik lainnya sedang dalam tahap pengembangan...
 
 
 
-## 技术栈
+## Tumpukan Teknologi (Tech Stack)
 
-- **平台**：[Cloudflare Workers](https://developers.cloudflare.com/workers/)
+- **Platform**: [Cloudflare Workers](https://developers.cloudflare.com/workers/)
 
-- **Web框架**：[Hono](https://hono.dev/)
+- **Framework Web**: [Hono](https://hono.dev/)
 
-- **ORM：**[Drizzle](https://orm.drizzle.team/)
+- **ORM**: [Drizzle](https://orm.drizzle.team/)
 
-- **前端框架**：[Vue3](https://vuejs.org/) 
+- **Framework Frontend**: [Vue 3](https://vuejs.org/) 
 
-- **UI框架**：[Element Plus](https://element-plus.org/) 
+- **Framework UI**: [Element Plus](https://element-plus.org/) 
 
-- **邮件推送：** [Resend](https://resend.com/)
+- **Layanan Pengiriman Email**: [Resend](https://resend.com/)
 
-- **缓存**：[Cloudflare KV](https://developers.cloudflare.com/kv/)
+- **Penyimpanan Cache**: [Cloudflare KV](https://developers.cloudflare.com/kv/)
 
-- **数据库**：[Cloudflare D1](https://developers.cloudflare.com/d1/)
+- **Database**: [Cloudflare D1](https://developers.cloudflare.com/d1/)
 
-- **文件存储**：[Cloudflare R2](https://developers.cloudflare.com/r2/)
+- **Penyimpanan File**: [Cloudflare R2](https://developers.cloudflare.com/r2/)
 
-## 目录结构
+## Struktur Direktori
 
 ```
 cloud-mail
-├── mail-worker				    # worker后端项目
+├── mail-worker                 # Proyek backend (Cloudflare Worker)
 │   ├── src                  
-│   │   ├── api	 			    # api接口层			
-│   │   ├── const  			    # 项目常量
-│   │   ├── dao                 # 数据访问层
-│   │   ├── email			    # 邮件处理接收
-│   │   ├── entity			    # 数据库实体
-│   │   ├── error			    # 自定义异常
-│   │   ├── hono			    # web框架配置、拦截器、全局异常等
-│   │   ├── i18n			    # 语言国际化
-│   │   ├── init			    # 数据库缓存初始化
-│   │   ├── model			    # 响应体数据封装
-│   │   ├── security			# 身份权限认证
-│   │   ├── service			    # 业务服务层
-│   │   ├── template			# 消息模板
-│   │   ├── utils			    # 工具类
-│   │   └── index.js			# 入口文件
-│   ├── pageckge.json			# 项目依赖
-│   └── wrangler.toml			# 项目配置
+│   │   ├── api                 # Lapisan antarmuka API			
+│   │   ├── const               # Konstanta proyek
+│   │   ├── dao                 # Lapisan akses data (Data Access Object)
+│   │   ├── email               # Pemrosesan dan penerimaan email
+│   │   ├── entity              # Entitas database
+│   │   ├── error               # Penanganan eksepsi kustom
+│   │   ├── hono                # Konfigurasi framework web, interceptor, eksepsi global, dll.
+│   │   ├── i18n                # Internasionalisasi bahasa
+│   │   ├── init                # Inisialisasi cache database
+│   │   ├── model               # Enkapsulasi data respons API
+│   │   ├── security            # Otentikasi & otorisasi hak akses
+│   │   ├── service             # Lapisan logika bisnis
+│   │   ├── template            # Template pesan
+│   │   ├── utils               # Kelas utilitas (Tools)
+│   │   └── index.js            # File utama/entri
+│   ├── package.json            # Dependensi proyek backend
+│   └── wrangler.toml           # Konfigurasi Cloudflare Wrangler
 │
-├── mail-vue				    # vue前端项目
+├── mail-vue                    # Proyek frontend (Vue 3)
 │   ├── src
-│   │   ├── axios 			    # axios配置
-│   │   ├── components			# 自定义组件
-│   │   ├── echarts			    # echarts组件导入
-│   │   ├── i18n			    # 语言国际化
-│   │   ├── init			    # 入站初始化
-│   │   ├── layout			    # 主体布局组件
-│   │   ├── perm			    # 权限认证
-│   │   ├── request			    # api接口
-│   │   ├── router			    # 路由配置
-│   │   ├── store			    # 全局状态管理
-│   │   ├── utils			    # 工具类
-│   │   ├── views			    # 页面组件
-│   │   ├── app.vue			    # 入口组件
-│   │   ├── main.js			    # 入口js
-│   │   └── style.css			# 全局css
-│   ├── package.json			# 项目依赖
-└── └── env.release				# 项目配置
+│   │   ├── axios               # Konfigurasi Axios
+│   │   ├── components          # Komponen kustom Vue
+│   │   ├── echarts             # Konfigurasi dan import ECharts
+│   │   ├── i18n                # Internasionalisasi bahasa
+│   │   ├── init                # Inisialisasi aplikasi saat dimuat
+│   │   ├── layout              # Komponen tata letak utama (Layout)
+│   │   ├── perm                # Autentikasi izin pengguna
+│   │   ├── request             # Pengelolaan panggilan API
+│   │   ├── router              # Konfigurasi rute (Vue Router)
+│   │   ├── store               # Manajemen status global (Pinia)
+│   │   ├── utils               # Kelas utilitas (Tools)
+│   │   ├── views               # Komponen halaman web
+│   │   ├── App.vue             # Komponen utama aplikasi
+│   │   ├── main.js             # Entri utama JS
+│   │   └── style.css           # CSS global
+│   ├── package.json            # Dependensi proyek frontend
+└── └── env.release             # Konfigurasi lingkungan deployment
 ```
 
-## 赞助
+## Dukungan & Donasi
 
 <a href="https://doc.skymail.ink/support.html" >
 <img width="170px" src="./doc/images/support.png" alt="">
 </a>
 
-## 许可证
+## Lisensi
 
-本项目采用 [MIT](LICENSE) 许可证	
+Proyek ini mendistribusikan di bawah lisensi [MIT](LICENSE).	
 
 
-## 交流
+## Komunitas & Diskusi
 
 [Telegram](https://t.me/cloud_mail_tg)
-
-
-
